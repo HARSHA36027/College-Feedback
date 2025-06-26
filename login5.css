@@ -1,0 +1,83 @@
+body{
+    
+    background-color: coral;
+}
+.container{
+display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container1{
+    margin-top: 100px;
+    background-color:white;
+    border: 3px solid white ;
+    border-radius: 6px;
+    height: 300px;
+    width: 500px;
+    text-align: center;
+    padding-top: 100px;
+}
+input{
+    width: 320px;
+    height: 30px;
+    padding-left: 12px;
+    border: 0.5 solid white;
+    outline: none;
+    font-size: 17px;
+    color: black;
+}
+input:placeholder-shown{
+    font-size: 10px;
+}
+button{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+}
+@media only screen and (max-width:1155px){
+
+
+    body{
+  
+    background-color: palegoldenrod;
+    } 
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 700px;
+}
+
+.container1{
+    margin-top: 100px;
+    background-color:white;
+    border: 3px solid white ;
+    border-radius: 6px;
+    height: 300px;
+    width: 500px;
+    text-align: center;
+    padding-top: 100px;
+}
+input{
+    width: 320px;
+    height: 30px;
+    padding-left: 12px;
+    border: 0.5 solid white;
+    outline: none;
+    font-size: 17px;
+    color: black;
+}
+input:placeholder-shown{
+    font-size: 10px;
+}
+button{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+
+}
+}
