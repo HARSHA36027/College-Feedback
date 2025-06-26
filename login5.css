@@ -36,18 +36,18 @@ button{
     height: 30px;
     font-size: 20px;
 }
-@media only screen and (max-width:1155px){
+@media only screen and (max-width:1255px){
 
 
     body{
   
-    background-color: palegoldenrod;
+    background-color: coral;
     } 
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-     width: 700px;
+     width: 1000px;
 }
 
 .container1{
