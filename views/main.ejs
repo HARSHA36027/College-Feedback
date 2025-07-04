@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="head">
+    <h2>Welcome</h2>
+    <form method="post" action="/feed">
+    <button>Feed Again</button>
+    </form>
+    </div>
+   <% for ( data of datas){ %>
+    <div class="container">
+     <div class="name">
+        <p>Name: <%=data.name%></p>
+    </div>
+    <div class="name">
+        <p>Course: <%=data.course%></p>
+    </div>
+    <div class="name">
+        <p>Semister:<%=data.semister%> </p>
+    </div>
+    <div class="content">
+        <p><span class="feed">Feed: </span> <%= data.content %> </p>
+        </div>
+</div>
+  <% } %>
+</form>
+</body>
+</html>

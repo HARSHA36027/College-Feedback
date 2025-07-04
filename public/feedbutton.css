@@ -1,0 +1,118 @@
+body{
+    background-color:  darkkhaki;
+
+}
+
+.container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.courses{
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 6px;
+     width: 250px;
+    height: 200px;
+    margin-right: 50px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+       box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.20);
+}
+.btech{
+    margin-left: 40px;
+    text-align: center;
+}
+
+.input{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+input[type="checkbox"]{
+border: 1px solid blue;
+width: 15px;
+height: 15px;
+border-radius: 5px;
+cursor: pointer;
+/* margin-right: 20px; */
+
+
+}
+.semister{
+    border: 1px solid black;
+    width: 250px;
+    height: 200px;
+     background-color: white;
+    margin-left: 100px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid white;
+    border-radius: 6px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.30), 0 11px 8px rgba(0,0,0,0.20);
+}
+.seminput{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+}
+button{
+    
+    margin-top: 100px;
+    margin-bottom: 200px;
+    font-size: 25px;
+    color:coral;
+    width: 550px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+button:hover{
+ margin-top: 100px;
+    margin-bottom: 200px;
+    font-size: 25px;
+    color: blue;
+    width: 550px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-box: 1.1px;
+    cursor: pointer;
+    
+}
+ @media only screen and (max-width:1255px){
+    body{
+        
+    background-color: darkkhaki;
+    display: flex;
+    width:1200px;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    color: darkorange;
+    margin-top: 200px;
+    margin-bottom: 200px;
+    font-size: 25px;
+    color: blue;
+    width: 500px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+
+
+
+    }
+    button:hover{
+ margin-top: 240px;
+    margin-bottom: 200px;
+    font-size: 25px;
+    color: blue;
+    width: 550px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    text-box: 1.1px;
+    cursor: pointer;
+    }
+}
