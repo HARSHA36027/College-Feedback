@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Complaint Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for dialog animation */
+        .modal {
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Custom checkbox style */
+        .custom-checkbox {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #3b82f6;
+            border-radius: 4px;
+            outline: none;
+            transition: all 0.2s;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .custom-checkbox:checked {
+            background-color: #3b82f6;
+        }
+        
+        .custom-checkbox:checked::after {
+            content: "✓";
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-blue-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://placehold.co/60x60?text=GovLogo" alt="Government agency logo" class="mr-4">
+                <div>
+                    <h1 class="text-2xl font-bold">Government Complaint Portal</h1>
+                    <p class="text-blue-100">Your voice matters in improving public services</p>
+                </div>
+            </div>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-blue-200">Home</a></li>
+                    <li><a href="#" class="hover:text-blue-200">About</a></li>
+                    <li><a href="#" class="hover:text-blue-200">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8">
+        <!-- Introduction Section -->
+        <section class="lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <div class="mb-6">
+                <h2 class="text-xl font-semibold text-blue-800 mb-2">How to File a Complaint</h2>
+                <p class="text-gray-600">Our commitment to transparency and accountability ensures your concerns are addressed.</p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div class="bg-blue-100 rounded-full p-2 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Complete the Form</h3>
+                        <p class="text-sm text-gray-500">Provide all required details about your concern</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-blue-100 rounded-full p-2 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Review Process</h3>
+                        <p class="text-sm text-gray-500">Your complaint will be reviewed within 3 business days</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="bg-blue-100 rounded-full p-2 mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-gray-800">Receive Updates</h3>
+                        <p class="text-sm text-gray-500">You'll receive email updates about your complaint status</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <h3 class="text-blue-800 font-medium mb-2">Need Help?</h3>
+                <p class="text-sm text-gray-600">Call our helpline: <span class="font-semibold">1-800-GOV-HELP</span></p>
+                <p class="text-sm text-gray-600">Monday-Friday, 8:00AM to 5:00PM</p>
+            </div>
+        </section>
+
+        <!-- Complaint Form -->
+        <section class="lg:w-2/3 bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">File Your Complaint</h2>
+            
+            <form id="complaintForm" class="space-y-6">
+                <!-- Personal Information -->
+                <fieldset class="border border-gray-200 rounded-lg p-4">
+                    <legend class="text-lg font-medium text-gray-700 px-2">Personal Information</legend>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                        <div>
+                            <label for="address" class="block text-sm font-medium text-gray-700 mb-1">Zip Code *</label>
+                            <input type="text" id="zipCode" name="zipCode" required
+                                   class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <!-- Complaint Details -->
+                <fieldset class="border border-gray-200 rounded-lg p-4">
+                    <legend class="text-lg font-medium text-gray-700 px-2">Complaint Details</legend>
+                    
+                    <div>
+                        <label for="complaintType" class="block text-sm font-medium text-gray-700 mb-1">Complaint Type *</label>
+                        <select id="complaintType" name="complaintType" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select a category</option>
+                            <option value="Government Services">Government Services</option>
+                            <option value="Public Safety">Public Safety</option>
+                            <option value="Environment">Environment</option>
+                            <option value="Infrastructure">Infrastructure</option>
+                            <option value="Healthcare">Healthcare</option>
+                            <option value="Education">Education</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label for="department" class="block text-sm font-medium text-gray-700 mb-1">Related Department/Agency *</label>
+                        <select id="department" name="department" required
+                                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Select department/agency</option>
+                            <option value="Department of Transportation">Department of Transportation</option>
+                            <option value="Health Department">Health Department</option>
+                            <option value="Education Department">Education Department</option>
+                            <option value="Public Works">Public Works</option>
+                            <option value="Police Department">Police Department</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label for="incidentDate" class="block text-sm font-medium text-gray-700 mb-1">Incident Date *</label>
+                        <input type="date" id="incidentDate" name="incidentDate" required
+                               class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label for="complaintDetails" class="block text-sm font-medium text-gray-700 mb-1">Complaint Details *</label>
+                        <textarea id="complaintDetails" name="complaintDetails" rows="5" required
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                        <p class="text-xs text-gray-500 mt-1">Please describe your complaint in detail, including location, involved parties, and any relevant information</p>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <label for="desiredResolution" class="block text-sm font-medium text-gray-700 mb-1">Desired Resolution (Optional)</label>
+                        <textarea id="desiredResolution" name="desiredResolution" rows="3"
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                    </div>
+                </fieldset>
+                
+                <!-- Attachments -->
+                <fieldset class="border border-gray-200 rounded-lg p-4">
+                    <legend class="text-lg font-medium text-gray-700 px-2">Attachments</legend>
+                    
+                    <div id="fileUploadArea" class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:bg-gray-50">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                        </svg>
+                        <h3 class="mt-2 text-sm font-medium text-gray-700">
+                            <label for="fileUpload" class="relative cursor-pointer">
+                                <span>Click to upload files</span>
+                                <input id="fileUpload" type="file" class="sr-only" multiple>
+                            </label>
+                        </h3>
+                        <p class="mt-1 text-xs text-gray-500">Up to 5 files (PDF, JPG, PNG) up to 5MB each</p>
+                    </div>
+                    <div id="fileList" class="mt-4 space-y-2 hidden">
+                        <!-- Files will be listed here -->
+                    </div>
+                </fieldset>
+                
+                <!-- Privacy Agreement -->
+                <div class="flex items-start">
+                    <div class="flex items-center h-5">
+                        <input id="privacyAgreement" name="privacyAgreement" type="checkbox" required
+                               class="custom-checkbox">
+                    </div>
+                    <div class="ml-3 text-sm">
+                        <label for="privacyAgreement" class="font-medium text-gray-700">I agree to the <a href="#" class="text-blue-600 hover:text-blue-500">privacy policy</a> and understand that this information will be used to process my complaint.</label>
+                    </div>
+                </div>
+                
+                <!-- Submit Button -->
+                <div class="flex justify-end">
+                    <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                        Submit Complaint
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Government Complaint Portal</h3>
+                    <p class="text-gray-300">A platform for citizens to voice concerns and improve public services through transparent communication.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white">Track Complaint Status</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Frequently Asked Questions</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <address class="not-italic text-gray-300">
+                        <p>123 Government Blvd</p>
+                        <p>Capital City, CC 12345</p>
+                        <p class="mt-2">Email: complaints@gov.org</p>
+                        <p>Phone: 1-800-GOV-HELP</p>
+                    </address>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>&copy; 2023 Government Complaint Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Submission Modal -->
+    <div id="submissionModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center hidden modal">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full">
+            <div class="text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto h-12 w-12 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+                <h3 class="text-lg font-medium text-gray-900 mt-3">Complaint Submitted Successfully!</h3>
+                <div class="mt-4">
+                    <p class="text-sm text-gray-500">Your complaint has been received. A confirmation has been sent to your email.</p>
+                    <p class="text-sm text-gray-500 mt-2">Your reference number: <span id="referenceNumber" class="font-bold">GC-2023-00542</span></p>
+                </div>
+                <div class="mt-6">
+                    <button id="modalClose" type="button" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // File upload handling
+            const fileUploadArea = document.getElementById('fileUploadArea');
+            const fileInput = document.getElementById('fileUpload');
+            const fileList = document.getElementById('fileList');
+            
+            fileUploadArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+            
+            fileInput.addEventListener('change', function() {
+                if (fileInput.files.length > 0) {
+                    fileList.innerHTML = '';
+                    fileList.classList.remove('hidden');
+                    
+                    for (let i = 0; i < fileInput.files.length; i++) {
+                        const file = fileInput.files[i];
+                        const fileElement = document.createElement('div');
+                        fileElement.className = 'flex items-center justify-between p-2 bg-gray-100 rounded';
+                        
+                        fileElement.innerHTML = `
+                            <div class="flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                                </svg>
+                                <span class="text-sm text-gray-700 truncate max-w-xs">${file.name}</span>
+                            </div>
+                            <button type="button" class="text-red-500 hover:text-red-700 remove-file" data-index="${i}">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                </svg>
+                            </button>
+                        `;
+                        
+                        fileList.appendChild(fileElement);
+                    }
+                    
+                    // Add event listeners to remove buttons
+                    document.querySelectorAll('.remove-file').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            removeFile(index);
+                        });
+                    });
+                }
+            });
+            
+            function removeFile(index) {
+                const dt = new DataTransfer();
+                const files = fileInput.files;
+                
+                for (let i = 0; i < files.length; i++) {
+                    if (i !== index) {
+                        dt.items.add(files[i]);
+                    }
+                }
+                
+                fileInput.files = dt.files;
+                
+                // Trigger change event to update UI
+                const event = new Event('change');
+                fileInput.dispatchEvent(event);
+            }
+            
+            // Form submission handling
+            const complaintForm = document.getElementById('complaintForm');
+            const submissionModal = document.getElementById('submissionModal');
+            const modalClose = document.getElementById('modalClose');
+            
+            complaintForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Generate a random reference number
+                const refNum = 'GC-' + new Date().getFullYear() + '-' + Math.floor(10000 + Math.random() * 90000);
+                document.getElementById('referenceNumber').textContent = refNum;
+                
+                // Show submission modal
+                submissionModal.classList.remove('hidden');
+                
+                // Here you would typically send the form data to a server
+                // For demo purposes, we're just showing the modal
+                console.log('Form data:', {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    zipCode: document.getElementById('zipCode').value,
+                    complaintType: document.getElementById('complaintType').value,
+                    department: document.getElementById('department').value,
+                    incidentDate: document.getElementById('incidentDate').value,
+                    complaintDetails: document.getElementById('complaintDetails').value,
+                    desiredResolution: document.getElementById('desiredResolution').value,
+                    files: fileInput.files,
+                    privacyAgreement: document.getElementById('privacyAgreement').checked
+                });
+            });
+            
+            modalClose.addEventListener('click', function() {
+                submissionModal.classList.add('hidden');
+                // Reset form (optional)
+                // complaintForm.reset();
+            });
+            
+            // Click outside modal to close
+            submissionModal.addEventListener('click', function(e) {
+                if (e.target === submissionModal) {
+                    submissionModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
