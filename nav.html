@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body{
+    padding: 0px;
+    margin: 0px;
+   font-family: "Plus Jakarta Sans", sans-serif !important;
+   background-color:whitesmoke !important;
+  
+  }
+  
+  /* navbar */
+  .nav-bar{
+    background-color: rgb(85, 85, 252) !important;
+  }
+.navbar-toggler {
+  color: white !important;
+}
+
+.navbar-toggler:after {
+    content: '☰'; 
+    font-size: 24px; 
+    color:white; 
+}
+.offcanvas{
+  width: 270px !important;
+}
+
+.nav-items{
+     
+  font-weight: 900 !important;
+}
+.logo{
+  width: 50px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 10px;
+  
+}
+
+/* signup */
+
+.signup-box{
+  /* width: 800px; */
+  height: 450px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+
+    </style>
+     <link
+       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+       rel="stylesheet" 
+       integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+        crossorigin="anonymous">
+</head>
+<body>
+    
+
+
+<nav class="navbar bg-body-tertiary fixed-top mb-5"> 
+  <div class="container-fluid nav-bar">
+   <img src="/image/logo.webp" class="logo mt-">
+                    <div class="ms-5 mt-2" >
+                    <h3 class="text-2xl font-bold text-center text-white">Government Complaint Portal</h3>
+                    <p class="text-center text-white">Your voice matters in improving public services</p>
+                </div>
+    <button class="navbar-toggler me-5 mb-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 font-bold">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-items" href="#">Signup</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link nav-items" href="#">Add Complaint</a>
+          </li>
+            <form class="d-flex mt-3" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+       
+         <li class="nav-item mt-2 nav-items">
+            <a class="nav-link" href="#">Login</a>
+          </li>
+        </ul>
+      
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">
+    <div class="row">
+        <div class="signup-box col-md-8 col-xs-10 offset-2 mt-5">
+          <h3 class="text-center mt-3"> Signup your account</h3>
+          <form method="post" action="/samasaya/consumer/signup">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" name="name" placeholder=" Enter the name" class="form-control">
+        </div>
+
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" name="username" placeholder=" Enter the username" class="form-control">
+        </div>
+         
+          <div class="mb-3">
+            <label for="mobile" class="form-label">Mobile.no</label>
+            <input type="number" id="mobile" name="mobile" placeholder=" Enter the mobile.no" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="Otp" class="form-label">Otp</label>
+            <input type="number" id="Otp" name="otp" placeholder=" Enter the otp" class="form-control">
+        </div>
+        <div class="button  text-center ">
+        
+        <button class="btn btn-dark text-white col-5">Signup</button>
+        </div>
+</form>
+
+        </div>
+    </div>
+</div>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
+         crossorigin="anonymous"></script>
+</body>
+</html>
